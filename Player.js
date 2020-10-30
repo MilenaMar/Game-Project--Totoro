@@ -9,5 +9,19 @@ class Player {
     draw() {
       image(totoro, this.x, this.y, this.width, this.height);
     }
+
+    moveLeft() {
+        if (this.x <= 0) {
+          return;
+        }
+        this.x -= 30;
+      }
+    
+      moveRight() {
+        if (this.x >= WIDTH - this.width) {
+          return;
+        }
+        this.x += 30;
+      }
   }
   

@@ -15,3 +15,11 @@ function preload() {
     image(backImg, 0, 0, width, height);
     game.draw();
   }
+
+  function keyPressed() {
+     if (keyCode === 37) {
+      game.player.moveLeft();
+    } else if (keyCode === 39) {
+      game.player.moveRight();
+    }
+  }
