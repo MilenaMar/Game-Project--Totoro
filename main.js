@@ -1,6 +1,8 @@
 function preload() {
     totoro = loadImage("./assest/totoro.png");
     backImg = loadImage("./assest/Background.jpg")
+    dust = loadImage("./assest/dust.png")
+    food = loadImage("./assest/acorn.png")
    
   }
   const game = new Game();

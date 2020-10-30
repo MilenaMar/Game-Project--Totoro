@@ -1,15 +1,46 @@
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+
+body {
   background: linear-gradient(90deg, #206a5d 33%, #8db596 88%, #bedbbb 100%);
 }
 
 h1 {
   color: white;
   text-align: center;
-  font-family: "M PLUS Rounded 1c", sans-serif;
   font-size: 4rem;
+  margin-bottom: 50px;
 }
 
 canvas {
   display: block;
   margin: 0 auto;
+  border: 10px inset #206a5d;
+}
+
+div {
+  position: absolute;
+  color: white;
+  right: 75%;
+  top: 15%;
+  padding: 20px;
+}
+
+h3 {
+  font-size: 2rem;
+  text-align: center;
+}
+.description p {
+  font-size: 1.5rem;
+  text-align: justify;
+  margin: 10px;
+}
+.directions {
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
 }
