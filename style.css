@@ -5,12 +5,8 @@
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
-body {
-  background: linear-gradient(90deg, #206a5d 33%, #8db596 88%, #bedbbb 100%);
-}
-
 h1 {
-  color: white;
+  color: #206a5d;
   text-align: center;
   font-size: 4rem;
   margin-bottom: 50px;
@@ -28,6 +24,9 @@ div {
   right: 75%;
   top: 15%;
   padding: 20px;
+  background: linear-gradient(90deg, #206a5d 33%, #8db596 88%, #bedbbb 100%);
+  border-radius: 25%;
+  margin-left: 10px;
 }
 
 h3 {
