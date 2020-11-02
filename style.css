@@ -4,7 +4,11 @@
   box-sizing: border-box;
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
-
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 h1 {
   color: #206a5d;
   text-align: center;
@@ -18,28 +22,98 @@ canvas {
   border: 10px inset #206a5d;
 }
 
-div {
+.description {
   position: absolute;
   color: white;
   right: 75%;
-  top: 15%;
+  top: 25%;
   padding: 20px;
   background: linear-gradient(90deg, #206a5d 33%, #8db596 88%, #bedbbb 100%);
   border-radius: 25%;
   margin-left: 10px;
+  font-size: 1.5rem;
+  text-align: justify;
+  margin: 10px;
 }
 
 h3 {
   font-size: 2rem;
   text-align: center;
 }
-.description p {
-  font-size: 1.5rem;
-  text-align: justify;
-  margin: 10px;
-}
-.directions {
+.icons {
   display: flex;
   font-size: 2rem;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.start-game {
+  visibility: visible;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 181px;
+  left: 484px;
+  width: 779px;
+  height: 576px;
+  border-radius: 1.8em;
+  background-color: rgba(0, 74, 72, 0.9);
+}
+
+.start-game p {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 779px;
+  height: 576px;
+  font-size: 2rem;
+}
+
+.game-over {
+  visibility: hidden;
+  color: white;
+  position: absolute;
+  text-align: center;
+  top: 181px;
+  left: 484px;
+  width: 779px;
+  height: 576px;
+  border-radius: 1.8em;
+  background-color: rgba(0, 74, 72, 0.9);
+}
+
+.play-again {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 779px;
+  height: 576px;
+}
+
+.game-over a {
+  text-decoration: none;
+  color: white;
+}
+
+.game-over a:visited {
+  color: white;
+}
+
+.game-over a:hover {
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 2%;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+footer a:visited {
+  color: #206a5d;
 }
