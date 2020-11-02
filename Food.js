@@ -7,7 +7,7 @@ class Food {
     }
   
     draw() {
-      this.y += 2;
+      this.y += speed;
       image(food,this.x, this.y, this.width, this.height);
     }
 

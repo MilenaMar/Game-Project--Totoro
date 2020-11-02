@@ -7,7 +7,7 @@ class Dust {
     }
   
     draw() {
-      this.y += 3;
+      this.y += speed;
       image(dust,this.x, this.y, this.width, this.height);
     }
   }

@@ -4,3 +4,7 @@ let totoro;
 let backImg;
 let dust; 
 let food; 
+let dustTo;
+let drawPlayer = true;
+let speed =2;
+let secondLevel;

@@ -3,6 +3,8 @@ function preload() {
     backImg = loadImage("./assest/Background.jpg")
     dust = loadImage("./assest/dust.png")
     food = loadImage("./assest/acorn.png")
+    dustTo = loadImage("./assest/totoroD.png");
+    secondLevel =loadImage("./assest/secondLevel.jpg");
    
   }
   const game = new Game();
@@ -14,13 +16,15 @@ function preload() {
   }
 
   function draw() {
-    background("cyan");
     image(backImg, 0, 0, width, height);
+    if (game.player.scoreCounter >= 5){
+      image(secondLevel, 0, 0, width, height);
+      }
     if (gameStatus === true){
     game.draw();
     }
-}
-
+  }
+    
 
   function keyPressed() {
      if (keyCode === 37) {

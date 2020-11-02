@@ -52,8 +52,8 @@ h3 {
   color: white;
   position: absolute;
   text-align: center;
-  top: 181px;
-  left: 484px;
+  top: 156px;
+  left: 572px;
   width: 779px;
   height: 576px;
   border-radius: 1.8em;
@@ -75,8 +75,8 @@ h3 {
   color: white;
   position: absolute;
   text-align: center;
-  top: 181px;
-  left: 484px;
+  top: 156px;
+  left: 572px;
   width: 779px;
   height: 576px;
   border-radius: 1.8em;
@@ -116,4 +116,15 @@ footer {
 
 footer a:visited {
   color: #206a5d;
+}
+
+.score {
+  position: fixed;
+  right: 228px;
+  bottom: 52%;
+  width: 13%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  background-color: rgba(0, 74, 72, 0.9);
 }
