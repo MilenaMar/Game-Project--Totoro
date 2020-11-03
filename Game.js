@@ -7,7 +7,7 @@ class Game {
       this.dustlevel =[];  // object introduce in level 3
     }
   
-    draw() {
+draw() {
       this.player.draw();
 
   /* Food draw method called if the Dust object is out of the canvas  delete from the 
@@ -34,7 +34,7 @@ class Game {
       else if (this.player.scoreCounter >= 5){
         speed = 2.5
       }
-   });
+    });
   
 
    /* Dust draw mathod called, if the Dust object is out of the canvas delete from the 
@@ -44,7 +44,7 @@ class Game {
     this.dust.push(new Dust());
   }
 
-  this.dust.forEach((dustOb, index) => { 
+   this.dust.forEach((dustOb, index) => { 
     dustOb.draw();
     if (dustOb.y + dustOb.height >= HEIGHT) {
       this.dust.splice(index, 1);
@@ -53,29 +53,29 @@ class Game {
     if (this.colisionCheck(dustOb, this.player)) {
       noLoop();
       document.querySelector('div.game-over').style.visibility = "visible";
+      document.querySelector('div.hidden').style.visibility="visible";
     }
- });
+    });
+   
+    /* Dust for the Third and last level  draw () this only should run once the scoreCunter is >= than 10*/
+    if (this.player.scoreCounter >= 10){
+    if (frameCount % 60 === 0) {
+     this.dustlevel.push(new LevelDust());
+   }
+   this.dustlevel.forEach((dustOb, index) => { 
+     dustOb.draw();
+     if (dustOb.y + dustOb.height >= HEIGHT) {
+       this.dustlevel.splice(index, 1);
+     }
+     if (this.colisionCheck(dustOb, this.player)) {
+       noLoop();
+       document.querySelector('div.game-over').style.visibility = "visible";
+       document.querySelector('div.hidden').style.visibility="visible";
+     }
+   });
+    }
 
- /* Dust for the Third and last level  draw () this only should run once the scoreCunter is >= than 10*/
- if (this.player.scoreCounter >= 10){
- if (frameCount % 60 === 0) {
-  this.dustlevel.push(new LevelDust());
 }
-
-this.dustlevel.forEach((dustOb, index) => { 
-  dustOb.draw();
-  if (dustOb.y + dustOb.height >= HEIGHT) {
-    this.dustlevel.splice(index, 1);
-  }
-
-  if (this.colisionCheck(dustOb, this.player)) {
-    noLoop();
-    document.querySelector('div.game-over').style.visibility = "visible";
-  }
-});
- }
-
-    }
     
  
 

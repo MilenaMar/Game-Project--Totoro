@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.sound.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/ee493ec9f0.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
@@ -12,11 +13,11 @@
 </head>
 <body>
  <h1>Help Totoro to get his Food  足!!!</h1>
- <div class="body">
+ <div class="game-body">
  <div class="description">
  <h3>Hi There!</h3>
  <p>Everybody knows Totoro, And we all know he loves nothing more than <strong>Acorns.</strong></p>
- <p>Help Totoro to get as many Acorns as Possible but ...  Be careful with the dust Totoro is not a fan !!</p>
+ <p>Help Totoro to get as many Acorns as possible but ...  Be careful with the <strong>dust</strong> Totoro is not a fan !!</p>
  <div class="icons">
  <p>Move Left</p>
  <i class="fas fa-arrow-circle-left"></i>
@@ -25,10 +26,13 @@
 </div>
 </div>
 <div class="score">
-    <img src="/assest/score.png" alt="Totoro and his acorn" >
-    <p>Score: <span></span></p>
-
+    <img src="/assest/points.gif" alt="Totoro and his acorn" >
+    <p>Score <br> <span class="score-points"></span></p>
 </div>
+<div id="canvas-holder"> 
+</div>
+</div>
+<div class="hidden">
 <div class="start-game">
     <p>Press Space Bar  key to begin!</p>
 </div>

@@ -7,16 +7,20 @@ function preload() {
     secondLevel =loadImage("./assest/secondLevel.jpg");
     enemydust =loadImage("./assest/dust3.png");
     thirdLevel =loadImage("./assest/3level.jpg");
-   
+    
   }
   const game = new Game();
   const scoreBox = document.querySelector(".score span");
   let gameStatus = false;
 
   function setup() {
-    createCanvas(WIDTH,HEIGHT);
+    let canvas = createCanvas(WIDTH,HEIGHT);
+    canvas.parent('canvas-holder');
+    song = loadSound('./audio/anthem.mp3', loadedSound);
   }
-
+  function loadedSound(){
+    song.play();
+  }
   function draw() {
     image(backImg, 0, 0, width, height);
 
@@ -44,8 +48,11 @@ function preload() {
       if (keyCode === 32){
       gameStatus = true;
       document.querySelector('div.start-game').style.visibility = "hidden";
+      document.querySelector('div.hidden').style.visibility="hidden";
       scoreBox.style.visibility = 'visible';
       } 
+      
+      
   }
 
 

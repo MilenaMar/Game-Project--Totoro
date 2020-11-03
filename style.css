@@ -6,8 +6,6 @@
 }
 body {
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 h1 {
   color: #206a5d;
@@ -16,85 +14,78 @@ h1 {
   margin-bottom: 50px;
 }
 
+.game-body {
+  display: flex;
+  justify-content: space-around;
+}
 canvas {
-  display: block;
-  margin: 0 auto;
   border: 10px inset #206a5d;
 }
 
 .description {
-  position: absolute;
-  color: white;
-  right: 75%;
-  top: 25%;
-  padding: 20px;
-  background: linear-gradient(90deg, #206a5d 33%, #8db596 88%, #bedbbb 100%);
+  color: #206a5d;
   border-radius: 25%;
-  margin-left: 10px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: justify;
-  margin: 10px;
+  margin: 50px;
+  padding: 70px;
 }
-
 h3 {
   font-size: 2rem;
   text-align: center;
 }
 .icons {
-  display: flex;
   font-size: 2rem;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
+
+.score {
+  order: 5;
+}
+
+.hidden {
+  visibility: visible;
+  position: absolute;
+  top: 157px;
+  left: 630px;
+  color: white;
+  text-align: center;
+  width: 779px;
+  height: 576px;
+  font-size: 2rem;
+  border-radius: 1.5em;
+  background-color: rgba(0, 74, 72, 0.9);
+}
+
 .start-game {
   visibility: visible;
-  color: white;
   position: absolute;
-  text-align: center;
-  top: 156px;
-  left: 572px;
-  width: 779px;
-  height: 576px;
-  border-radius: 1.8em;
-  background-color: rgba(0, 74, 72, 0.9);
+  top: 50%;
+  left: 0;
+  right: 0;
 }
-
-.start-game p {
-  display: flex;
-  justify-content: center;
+.score p {
+  color: #206a5d;
   text-align: center;
-  align-items: center;
-  width: 779px;
-  height: 576px;
-  font-size: 2rem;
+  font-size: 4rem;
 }
-
+.score .score-points {
+  font-size: 4.5rem;
+  font-weight: bolder;
+}
 .game-over {
   visibility: hidden;
-  color: white;
   position: absolute;
-  text-align: center;
-  top: 156px;
-  left: 572px;
-  width: 779px;
-  height: 576px;
-  border-radius: 1.8em;
-  background-color: rgba(0, 74, 72, 0.9);
+  top: 50%;
+  left: 0;
+  right: 0;
 }
-
-.play-again {
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 779px;
-  height: 576px;
-}
-
 .game-over a {
   text-decoration: none;
   color: white;
+  padding: 7px;
+  border: solid #bedbbb;
+  border-radius: 50%;
 }
 
 .game-over a:visited {
@@ -103,6 +94,8 @@ h3 {
 
 .game-over a:hover {
   cursor: pointer;
+  background-color: white;
+  color: #206a5d;
 }
 
 footer {
@@ -116,19 +109,4 @@ footer {
 
 footer a:visited {
   color: #206a5d;
-}
-
-.score {
-  position: fixed;
-  right: 228px;
-  bottom: 52%;
-  width: 13%;
-  text-align: center;
-  font-size: 1.2rem;
-  color: white;
-  background-color: rgba(0, 74, 72, 0.9);
-}
-
-img {
-  max-width: 100px;
 }
