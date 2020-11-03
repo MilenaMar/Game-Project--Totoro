@@ -8,3 +8,5 @@ let dustTo;
 let drawPlayer = true;
 let speed =2;
 let secondLevel;
+let enemydust;
+let thirdLevel;

@@ -5,6 +5,8 @@ function preload() {
     food = loadImage("./assest/acorn.png")
     dustTo = loadImage("./assest/totoroD.png");
     secondLevel =loadImage("./assest/secondLevel.jpg");
+    enemydust =loadImage("./assest/dust3.png");
+    thirdLevel =loadImage("./assest/3level.jpg");
    
   }
   const game = new Game();
@@ -17,7 +19,10 @@ function preload() {
 
   function draw() {
     image(backImg, 0, 0, width, height);
-    if (game.player.scoreCounter >= 5){
+    if (game.player.scoreCounter >= 10){
+      image(thirdLevel, 0, 0, width, height);
+    } 
+    else if (game.player.scoreCounter >= 5){
       image(secondLevel, 0, 0, width, height);
       }
     if (gameStatus === true){

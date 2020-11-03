@@ -1,6 +1,6 @@
 class Dust {
     constructor() {
-      this.x = random(0, WIDTH);
+      this.x = random(0, WIDTH-40);
       this.y = 50;
       this.width = 50;
       this.height = 40;

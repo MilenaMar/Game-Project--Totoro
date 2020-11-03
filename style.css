@@ -128,3 +128,7 @@ footer a:visited {
   color: white;
   background-color: rgba(0, 74, 72, 0.9);
 }
+
+img {
+  max-width: 100px;
+}
