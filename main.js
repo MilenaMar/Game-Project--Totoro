@@ -19,12 +19,14 @@ function preload() {
 
   function draw() {
     image(backImg, 0, 0, width, height);
+
     if (game.player.scoreCounter >= 10){
       image(thirdLevel, 0, 0, width, height);
     } 
     else if (game.player.scoreCounter >= 5){
       image(secondLevel, 0, 0, width, height);
       }
+      
     if (gameStatus === true){
     game.draw();
     }
@@ -38,7 +40,7 @@ function preload() {
       game.player.moveRight();
     }
 
-    // Press Space Bar to start the game // Game status change to True
+    // Press Space Bar to start the game // Game status change to True // visivility CSS change 
       if (keyCode === 32){
       gameStatus = true;
       document.querySelector('div.start-game').style.visibility = "hidden";

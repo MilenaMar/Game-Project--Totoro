@@ -4,7 +4,7 @@ class Game {
       this.player = new Player();
       this.dust = [];
       this.food = [];  
-      this.dustlevel =[];  
+      this.dustlevel =[];  // object introduce in level 3
     }
   
     draw() {
@@ -12,8 +12,8 @@ class Game {
 
   /* Food draw method called if the Dust object is out of the canvas  delete from the 
     the array for the food, collision check for the food object if is collision drawPlayer is false which
-    enable me to draw again the image of the Player (smileTotoro) also use collision check to update the score 
-    of the Player with the scoreCounter*/
+    enable me to draw again the image of the Player (smileTotoro), increase the speed of the food and Dust
+     base on the scoreCounter*/
      if (frameCount % 120 === 0) {
       this.food.push(new Food());
     }
@@ -24,14 +24,15 @@ class Game {
       }
     if (this.colisionCheck(foodOb,this.player)) {
       drawPlayer = false;
-      foodOb.y=-50;
+      this.food.splice(index, 1);
       document.querySelector(".score span").innerText = this.player.scoreCounter;
+      }
+
       if (this.player.scoreCounter >= 10){
-        speed = 3.0
+        speed = 3.3
       }
       else if (this.player.scoreCounter >= 5){
         speed = 2.5
-      }
       }
    });
   
@@ -54,7 +55,28 @@ class Game {
       document.querySelector('div.game-over').style.visibility = "visible";
     }
  });
+
+ /* Dust for the Third and last level  draw () this only should run once the scoreCunter is >= than 10*/
+ if (this.player.scoreCounter >= 10){
+ if (frameCount % 60 === 0) {
+  this.dustlevel.push(new LevelDust());
+}
+
+this.dustlevel.forEach((dustOb, index) => { 
+  dustOb.draw();
+  if (dustOb.y + dustOb.height >= HEIGHT) {
+    this.dustlevel.splice(index, 1);
+  }
+
+  if (this.colisionCheck(dustOb, this.player)) {
+    noLoop();
+    document.querySelector('div.game-over').style.visibility = "visible";
+  }
+});
+ }
+
     }
+    
  
 
   /*Collision Check for Dust and Food of the 
@@ -76,8 +98,10 @@ class Game {
       return true; 
     } 
     
-
+    
   }
+
+  
    
 
  
