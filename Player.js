@@ -30,7 +30,5 @@ class Player {
         drawPlayer=true;
         this.x += 50;
       }
-      
-        
   }
   

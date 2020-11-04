@@ -1,3 +1,4 @@
+
 function preload() {
     totoro = loadImage("./assest/totoro.png");
     backImg = loadImage("./assest/Background.jpg")
@@ -16,21 +17,20 @@ function preload() {
   function setup() {
     let canvas = createCanvas(WIDTH,HEIGHT);
     canvas.parent('canvas-holder');
-    song = loadSound('./audio/anthem.mp3', loadedSound);
+   // song = loadSound('./audio/anthem.mp3', loadedSound);
   }
-  function loadedSound(){
-    song.play();
-  }
+  //function loadedSound(){
+    //song.play();
+  //}
   function draw() {
     image(backImg, 0, 0, width, height);
-
+    
     if (game.player.scoreCounter >= 10){
       image(thirdLevel, 0, 0, width, height);
     } 
     else if (game.player.scoreCounter >= 5){
       image(secondLevel, 0, 0, width, height);
       }
-      
     if (gameStatus === true){
     game.draw();
     }
@@ -43,16 +43,13 @@ function preload() {
     } else if (keyCode === 39) {
       game.player.moveRight();
     }
-
     // Press Space Bar to start the game // Game status change to True // visivility CSS change 
       if (keyCode === 32){
       gameStatus = true;
       document.querySelector('div.start-game').style.visibility = "hidden";
       document.querySelector('div.hidden').style.visibility="hidden";
-      scoreBox.style.visibility = 'visible';
       } 
-      
-      
+
   }
 
 

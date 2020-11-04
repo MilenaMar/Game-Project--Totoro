@@ -24,15 +24,15 @@ draw() {
       }
     if (this.colisionCheck(foodOb,this.player)) {
       drawPlayer = false;
-      this.food.splice(index, 1);
-      document.querySelector(".score span").innerText = this.player.scoreCounter;
-      }
-
+      this.player.scoreCounter += 1;
       if (this.player.scoreCounter >= 10){
         speed = 3.3
       }
       else if (this.player.scoreCounter >= 5){
         speed = 2.5
+      }
+      this.food.splice(index, 1);
+      document.querySelector(".score span").innerText = this.player.scoreCounter;
       }
     });
   
@@ -43,13 +43,11 @@ draw() {
    if (frameCount % 60 === 0) {
     this.dust.push(new Dust());
   }
-
    this.dust.forEach((dustOb, index) => { 
     dustOb.draw();
     if (dustOb.y + dustOb.height >= HEIGHT) {
       this.dust.splice(index, 1);
     }
-
     if (this.colisionCheck(dustOb, this.player)) {
       noLoop();
       document.querySelector('div.game-over').style.visibility = "visible";
@@ -74,27 +72,17 @@ draw() {
      }
    });
     }
-
 }
-    
- 
 
   /*Collision Check for Dust and Food of the 
   player if collision with the food happend the socoreCounter increases by 1*/
     colisionCheck(object, player) {
-      if ((player.x-10)+ player.width < object.x ){
+      if ((player.x-10)+ player.width < object.x ||(object.x-10) + object.width < player.x){
         return false;
       }
-      if ((object.x-10) + object.width < player.x){
+      if ((player.y+20) > object.y + object.height || object.y+30 > player.y + player.height) {
         return false;
       }
-      if ((player.y+20) > object.y + object.height) {
-        return false;
-      }
-      if (object.y+30 > player.y + player.height) {
-        return false;
-      }
-      this.player.scoreCounter += 1;
       return true; 
     } 
     
