@@ -10,7 +10,8 @@ class Player {
     draw() {
       if (drawPlayer === true ) {
       image(dustTo, this.x, this.y, this.width, this.height);
-      } else {
+      } 
+      else {
         image(totoro, this.x, this.y-7, this.width+10, this.height+10); 
       }
     }

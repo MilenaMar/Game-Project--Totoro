@@ -5,11 +5,11 @@ class Game {
       this.dust = [];
       this.food = [];  
       this.dustlevel =[];  // object introduce in level 3
+      this.boost = [] // boost for the game 
     }
   
 draw() {
       this.player.draw();
-
   /* Food draw method called if the Dust object is out of the canvas  delete from the 
     the array for the food, collision check for the food object if is collision drawPlayer is false which
     enable me to draw again the image of the Player (smileTotoro), increase the speed of the food and Dust
@@ -35,7 +35,34 @@ draw() {
       document.querySelector(".score span").innerText = this.player.scoreCounter;
       }
     });
-  
+
+
+    /// Boost Introduced to the game 
+    if (frameCount % 600 === 0) {
+      this.boost.push(new Boost()); 
+    }
+    this.boost.forEach((boostOb, index) => { 
+      boostOb.draw();
+      if (boostOb.y + boostOb.height >= HEIGHT) {
+        this.boost.splice(index, 1);
+      } 
+      if (this.colisionCheck(boostOb, this.player)) {
+        boostStatus=true;
+        this.boost.splice(index,1);
+        // set timer for 5 secods for the boost
+        timer = 5;   
+      }
+    });
+
+
+    /*timer if th boost timer is zero the status of the boost change to false*/
+    if (frameCount % 60 == 0 && timer > 0) { 
+      timer --;
+    }
+    if (timer === 0) {
+      boostStatus=false;
+    } 
+
 
    /* Dust draw mathod called, if the Dust object is out of the canvas delete from the 
     the array for the dust, also check of collision for the dust if collision is true the Player lose the game.  
@@ -45,7 +72,7 @@ draw() {
   }
    this.dust.forEach((dustOb, index) => { 
     dustOb.draw();
-    if (dustOb.y + dustOb.height >= HEIGHT) {
+    if (dustOb.y + dustOb.height >= HEIGHT || dustOb.y < 0) {
       this.dust.splice(index, 1);
     }
     if (this.colisionCheck(dustOb, this.player)) {
@@ -54,6 +81,8 @@ draw() {
       document.querySelector('div.hidden').style.visibility="visible";
     }
     });
+
+    
    
     /* Dust for the Third and last level  draw () this only should run once the scoreCunter is >= than 10*/
     if (this.player.scoreCounter >= 10){
@@ -62,7 +91,7 @@ draw() {
    }
    this.dustlevel.forEach((dustOb, index) => { 
      dustOb.draw();
-     if (dustOb.y + dustOb.height >= HEIGHT) {
+     if (dustOb.y + dustOb.height >= HEIGHT || dustOb.y < 0) {
        this.dustlevel.splice(index, 1);
      }
      if (this.colisionCheck(dustOb, this.player)) {
@@ -73,7 +102,6 @@ draw() {
    });
     }
 }
-
   /*Collision Check for Dust and Food of the 
   player if collision with the food happend the socoreCounter increases by 1*/
     colisionCheck(object, player) {
@@ -84,12 +112,5 @@ draw() {
         return false;
       }
       return true; 
-    } 
-    
-    
+    }  
   }
-
-  
-   
-
- 

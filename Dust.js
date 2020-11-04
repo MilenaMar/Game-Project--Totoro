@@ -7,8 +7,15 @@ class Dust {
     }
   
     draw() {
-      this.y += speed;
-      image(dust,this.x, this.y, this.width, this.height);
+      if (boostStatus === false){
+        this.y += speed;
+        image(dust,this.x, this.y, this.width, this.height);
+      } 
+      else {
+        this.y--;
+        image(dust,this.x, this.y, this.width, this.height);
+      }
     }
+
   }
   

@@ -11,3 +11,6 @@ let secondLevel;
 let enemydust;
 let thirdLevel;
 let canvas;
+let umbrella;
+let boostStatus=false;
+let timer;
