@@ -15,25 +15,21 @@ function preload() {
   let gameStatus = false;
 
   function setup() {
-    let canvas = createCanvas(WIDTH,HEIGHT);
-    canvas.parent('canvas-holder');
-   // song = loadSound('./audio/anthem.mp3', loadedSound);
+     canvas = createCanvas(WIDTH,HEIGHT);
+     canvas.parent('canvas-holder');
   }
-  //function loadedSound(){
-    //song.play();
-  //}
   function draw() {
     image(backImg, 0, 0, width, height);
     
-    if (game.player.scoreCounter >= 10){
-      image(thirdLevel, 0, 0, width, height);
-    } 
-    else if (game.player.scoreCounter >= 5){
-      image(secondLevel, 0, 0, width, height);
-      }
-    if (gameStatus === true){
+if (game.player.scoreCounter >= 10){
+  image(thirdLevel, 0, 0, width, height);
+} 
+else if (game.player.scoreCounter >= 5){
+  image(secondLevel, 0, 0, width, height);
+  }
+   if (gameStatus === true){
     game.draw();
-    }
+   }
   }
     
 

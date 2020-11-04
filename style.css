@@ -18,9 +18,6 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
-canvas {
-  border: 10px inset #206a5d;
-}
 
 .description {
   color: #206a5d;
@@ -46,14 +43,13 @@ h3 {
 .hidden {
   visibility: visible;
   position: absolute;
-  top: 157px;
-  left: 630px;
+  top: 146px;
+  left: 620px;
   color: white;
   text-align: center;
-  width: 779px;
-  height: 576px;
+  width: 800px;
+  height: 600px;
   font-size: 2rem;
-  border-radius: 1.5em;
   background-color: rgba(0, 74, 72, 0.9);
 }
 

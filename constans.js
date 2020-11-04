@@ -1,5 +1,5 @@
-const WIDTH = 800 ;
-const HEIGHT = 600 ;
+let WIDTH = 800 ;
+let HEIGHT = 600 ;
 let totoro; 
 let backImg;
 let dust; 
@@ -10,4 +10,4 @@ let speed =2;
 let secondLevel;
 let enemydust;
 let thirdLevel;
-let song;
+let canvas;
