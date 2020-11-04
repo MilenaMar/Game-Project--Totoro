@@ -27,7 +27,6 @@ function preload() {
 
    function loadedSound(){
      anthem.play();
-     anthem.loop = true;
      anthem.setVolume (0.1);
    }
   function draw() {
