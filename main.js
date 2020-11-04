@@ -9,6 +9,8 @@ function preload() {
     enemydust =loadImage("./assest/dust3.png");
     thirdLevel =loadImage("./assest/3level.jpg");
     umbrella = loadImage("./assest/boost.png");
+
+    
     
   }
   const game = new Game();
@@ -18,7 +20,16 @@ function preload() {
   function setup() {
      canvas = createCanvas(WIDTH,HEIGHT);
      canvas.parent('canvas-holder');
+     anthem = loadSound("./audio/anthem.mp3", loadedSound);
+     bite = loadSound("./audio/bite.mp3");
+     pain =loadSound("./audio/pain.mp3");
   }
+
+   function loadedSound(){
+     anthem.play();
+     anthem.loop = true;
+     anthem.setVolume (0.1);
+   }
   function draw() {
     image(backImg, 0, 0, width, height);
     

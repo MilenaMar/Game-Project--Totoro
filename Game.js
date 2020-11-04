@@ -23,6 +23,7 @@ draw() {
         this.food.splice(index, 1);
       }
     if (this.colisionCheck(foodOb,this.player)) {
+      bite.play();
       drawPlayer = false;
       this.player.scoreCounter += 1;
       if (this.player.scoreCounter >= 10){
@@ -76,13 +77,14 @@ draw() {
       this.dust.splice(index, 1);
     }
     if (this.colisionCheck(dustOb, this.player)) {
+      pain.play();
       noLoop();
       document.querySelector('div.game-over').style.visibility = "visible";
       document.querySelector('div.hidden').style.visibility="visible";
     }
     });
 
-    
+
    
     /* Dust for the Third and last level  draw () this only should run once the scoreCunter is >= than 10*/
     if (this.player.scoreCounter >= 10){
@@ -95,6 +97,7 @@ draw() {
        this.dustlevel.splice(index, 1);
      }
      if (this.colisionCheck(dustOb, this.player)) {
+       pain.play();
        noLoop();
        document.querySelector('div.game-over').style.visibility = "visible";
        document.querySelector('div.hidden').style.visibility="visible";

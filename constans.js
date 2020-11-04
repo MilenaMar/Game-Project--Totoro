@@ -14,3 +14,6 @@ let canvas;
 let umbrella;
 let boostStatus=false;
 let timer;
+let anthem;
+let bite;
+let pain;
