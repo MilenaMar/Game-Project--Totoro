@@ -18,4 +18,4 @@ let anthem;
 let bite;
 let pain;
  let higherScore;
- let savekey = "highscore" // savekey for local storage of high score
+let savekey = "highscore" // savekey for local storage of high score

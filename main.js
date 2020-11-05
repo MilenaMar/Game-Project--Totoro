@@ -9,9 +9,6 @@ function preload() {
     enemydust =loadImage("./assest/dust3.png");
     thirdLevel =loadImage("./assest/3level.jpg");
     umbrella = loadImage("./assest/boost.png");
-
-    
-    
   }
   const game = new Game();
   const scoreBox = document.querySelector(".score span");
