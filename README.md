@@ -15,8 +15,8 @@ timers.
 
 ## Inspiration
 
-Studio Ghibli Movies are simple the best!, and My Neighbor Totoro is my personal favorite.
-Why not bringh together the two things that a love! Coding & Totoro.
+Studio Ghibli Movies are simple the best!, and My Neighbour Totoro is my personal favorite.
+Why not bring together the two things that I love! Coding & Totoro.
 
 ![totoro Image](https://github.com/MilenaMar/Totoro/blob/main/assest/readme.png)
 
