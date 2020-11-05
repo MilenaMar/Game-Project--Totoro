@@ -16,6 +16,17 @@ function preload() {
   const game = new Game();
   const scoreBox = document.querySelector(".score span");
   let gameStatus = false;
+   document.querySelector(".score span").innerText =0;
+
+
+   // get highScore from my local storage
+   const scoreString = localStorage.getItem(savekey);
+   if(scoreString === null) {
+     higherScore = 0;
+   } else {
+    higherScore = parseInt(scoreString);
+   }
+   document.querySelector("#higher-score").innerText = higherScore
 
   function setup() {
      canvas = createCanvas(WIDTH,HEIGHT);
@@ -26,23 +37,24 @@ function preload() {
   }
 
    function loadedSound(){
-     anthem.play();
+    anthem.play();
      anthem.setVolume (0.1);
    }
   function draw() {
     image(backImg, 0, 0, width, height);
     
-if (game.player.scoreCounter >= 10){
+ if (game.player.scoreCounter >= 10){
   image(thirdLevel, 0, 0, width, height);
-} 
-else if (game.player.scoreCounter >= 5){
+ } 
+ else if (game.player.scoreCounter >= 5){
   image(secondLevel, 0, 0, width, height);
   }
    if (gameStatus === true){
+    document.querySelector('div.start-game').style.visibility = "hidden";
+    document.querySelector('div.hidden').style.visibility="hidden";
     game.draw();
    }
   }
-    
 
   function keyPressed() {
      if (keyCode === 37) {
@@ -53,8 +65,6 @@ else if (game.player.scoreCounter >= 5){
     // Press Space Bar to start the game // Game status change to True // visivility CSS change 
       if (keyCode === 32){
       gameStatus = true;
-      document.querySelector('div.start-game').style.visibility = "hidden";
-      document.querySelector('div.hidden').style.visibility="hidden";
       } 
 
   }

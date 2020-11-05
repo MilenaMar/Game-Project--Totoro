@@ -1,4 +1,5 @@
 
+
 class Game {
     constructor() {
       this.player = new Player();
@@ -37,6 +38,13 @@ draw() {
       }
     });
 
+     /*check if the current score is higher than the highScore and if  it is store it the localStorage. 
+      and update the inner text for the maxim score*/
+    if (this.player.scoreCounter > higherScore){
+      higherScore = this.player.scoreCounter
+      localStorage.setItem(savekey,higherScore);
+     document.querySelector("#higher-score").innerText = higherScore
+    }
 
     /// Boost Introduced to the game 
     if (frameCount % 600 === 0) {
@@ -79,6 +87,7 @@ draw() {
     if (this.colisionCheck(dustOb, this.player)) {
       pain.play();
       noLoop();
+      gameStatus = false;
       document.querySelector('div.game-over').style.visibility = "visible";
       document.querySelector('div.hidden').style.visibility="visible";
     }

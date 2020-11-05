@@ -67,9 +67,10 @@ h3 {
 .score p {
   color: #206a5d;
   text-align: center;
-  font-size: 4rem;
+  font-size: 2rem;
 }
-.score .score-points {
+.score .score-points,
+#higher-score {
   font-size: 4.5rem;
   font-weight: bolder;
 }
