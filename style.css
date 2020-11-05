@@ -13,6 +13,9 @@ h1 {
   font-size: 4rem;
   margin-bottom: 50px;
 }
+canvas {
+  z-index: 1;
+}
 
 .game-body {
   display: flex;
@@ -41,10 +44,9 @@ h3 {
 }
 
 .hidden {
-  visibility: visible;
   position: absolute;
-  top: 146px;
-  left: 620px;
+  z-index: 2;
+  visibility: visible;
   color: white;
   text-align: center;
   width: 800px;
@@ -95,9 +97,6 @@ h3 {
 }
 
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 2%;
   width: 100%;
   text-align: center;
   font-size: 1.2rem;
@@ -110,4 +109,10 @@ footer a:visited {
 img {
   width: 500px;
   height: 300px;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .hidden {
+    left: 23px;
+  }
 }
