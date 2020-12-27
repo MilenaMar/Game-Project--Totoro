@@ -2,7 +2,7 @@
 
 ## About
 
-Game develop during the third week of the Ironhack Bootcamp for Web Development.
+Game developed during the third week of the Ironhack Bootcamp for Web Development.
 
 ## Technologies used
 
